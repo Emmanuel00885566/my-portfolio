@@ -1,51 +1,54 @@
 // src/components/Hero.jsx
 import React from "react";
+import profileImg from "../assets/images/emmanuel.jpg";
 
 export default function Hero() {
   return (
-    <section id="hero" className="bg-gray-900 text-white h-screen flex items-center justify-center">
-      <div className="container mx-auto text-center px-6">
-        
+    <section
+      id="hero"
+      className="min-h-screen bg-brand-dark text-brand-text flex items-center justify-center pt-20"
+    >
+      <div className="max-w-4xl mx-auto text-center px-6">
         {/* Profile Image */}
         <div className="flex justify-center mb-6">
           <img
-            src="/emmanuel.jpg" // put your actual image in public/profile.jpg
-            alt="Adeboye Emmanuel Oluwatosin"
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-gray-700 shadow-lg object-cover"
+            src={profileImg}
+            alt="Adeboye Emmanuel"
+            className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-brand-accent shadow-xl object-cover"
           />
         </div>
 
-        {/* Intro Text */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Hi, I'm{" "}
-          <span className="text-green-400">Adeboye Emmanuel Oluwatosin</span>
+        {/* Intro */}
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          Hi, I’m{" "}
+          <span className="text-brand-accent">Adeboye Emmanuel</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-          I'm a <span className="text-green-400">Full-Stack Developer</span> with
-          expertise in JavaScript, TypeScript, Next.js, React.js, Node.js, Express, 
-          MongoDB, and SQL. I build modern, scalable, and
-          efficient applications.
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+          Full-Stack Developer focused on building scalable web applications and
+          reliable backend systems using modern JavaScript technologies.
         </p>
 
-        {/* Buttons */}
+        {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#projects"
-            className="px-6 py-3 bg-green-500 text-black rounded-lg shadow hover:bg-green-600 transition"
+            className="px-6 py-3 bg-brand-accent text-white rounded-full shadow hover:bg-emerald-600 transition-transform hover:scale-105"
           >
-            View My Work
+            View Projects
           </a>
+
           <a
             href="#contact"
-            className="px-6 py-3 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700 transition"
+            className="px-6 py-3 border border-brand-accent rounded-full text-brand-accent hover:bg-brand-accent hover:text-white transition-transform hover:scale-105"
           >
-            Get In Touch
+            Contact Me
           </a>
+
           <a
-            href="/Emmanuel.pdf" // place your CV in the public folder as CV.pdf
+            href="/Emmanuel.pdf"
             download
-            className="px-6 py-3 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700 transition"
+            className="px-6 py-3 border border-brand-accent rounded-full text-brand-accent hover:bg-brand-accent hover:text-white transition-transform hover:scale-105"
           >
             Download CV
           </a>

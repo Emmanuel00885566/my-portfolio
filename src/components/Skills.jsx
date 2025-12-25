@@ -1,33 +1,37 @@
 // src/components/Skills.jsx
 export default function Skills() {
-  const skills = [
-    { name: "HTML", icon: "🌐" },
-    { name: "CSS", icon: "🎨" },
-    { name: "JavaScript", icon: "⚡" },
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Express", icon: "🚀" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "Git/GitHub", icon: "🔗" },
-  ];
+  const skills = {
+    Frontend: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    Backend: ["Node.js", "Express", "MongoDB", "SQL"],
+    Tools: ["Git", "GitHub", "Postman"],
+  };
 
   return (
-    <section id="skills" className="py-16 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-10">
+    <section id="skills" className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-indigo-600">
           Skills
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {skills.map((skill, index) => (
+        <div className="grid gap-10 md:grid-cols-3">
+          {Object.entries(skills).map(([category, items]) => (
             <div
-              key={index}
-              className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition"
+              key={category}
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-transform hover:scale-105"
             >
-              <span className="text-4xl mb-3">{skill.icon}</span>
-              <p className="text-gray-700 dark:text-gray-200 font-medium">
-                {skill.name}
-              </p>
+              <h3 className="text-xl font-semibold mb-4 text-emerald-600">
+                {category}
+              </h3>
+              <ul className="space-y-2 text-gray-700">
+                {items.map((skill) => (
+                  <li
+                    key={skill}
+                    className="flex items-center gap-2 hover:text-indigo-600 transition-colors"
+                  >
+                    <span className="text-indigo-500">•</span> {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

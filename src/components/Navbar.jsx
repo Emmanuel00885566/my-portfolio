@@ -1,107 +1,66 @@
 // src/components/Navbar.jsx
 import { useState } from "react";
 
+const navLinks = [
+  { name: "Home", href: "#hero" },
+  { name: "Skills", href: "#skills" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md shadow-md font-sans">
+      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-indigo-700 font-bold text-xl">
+        <a
+          href="#hero"
+          className="font-heading text-brand-accent text-2xl tracking-wide hover:text-emerald-400 transition-colors"
+        >
           ADEBOYE EMMANUEL
-        </div>
+        </a>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-6 font-medium text-gray-800">
-          <li>
-            <a href="#hero" className="hover:text-lime-500 transition">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="hover:text-lime-500 transition">
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="hover:text-lime-500 transition">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="hover:text-lime-500 transition">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-lime-500 transition">
-              Contact
-            </a>
-          </li>
+        <ul className="hidden md:flex space-x-8 font-medium text-gray-300">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                className="hover:text-brand-accent transition-colors duration-200"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-300 text-2xl focus:outline-none"
+          aria-label="Toggle menu"
         >
-          {isOpen ? (
-            <span className="text-2xl">&times;</span> // close icon
-          ) : (
-            <span className="text-2xl">&#9776;</span> // hamburger
-          )}
+          {isOpen ? "×" : "☰"}
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-white shadow-lg py-4 space-y-3 font-medium text-gray-800">
-          <li>
-            <a
-              href="#hero"
-              className="hover:text-lime-500 transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              className="hover:text-lime-500 transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#about"
-              className="hover:text-lime-500 transition"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              className="hover:text-lime-500 transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className="hover:text-lime-500 transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </a>
-          </li>
+        <ul className="md:hidden flex flex-col items-center bg-brand-dark/95 backdrop-blur-lg shadow-lg py-6 space-y-6 font-medium text-gray-300">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="hover:text-brand-accent transition-colors duration-200"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
       )}
     </nav>
