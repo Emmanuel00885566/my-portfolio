@@ -29,7 +29,7 @@ export default function Contact() {
           <p className="flex items-center justify-center gap-2">
             <span className="text-xl">💼</span>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/adeboyemma5432"
               target="_blank"
               rel="noopener noreferrer"
               className="text-emerald-400 font-medium hover:text-emerald-300 transition-colors"
@@ -41,7 +41,7 @@ export default function Contact() {
           <p className="flex items-center justify-center gap-2">
             <span className="text-xl">💻</span>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Emmanuel00885566/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-emerald-400 font-medium hover:text-emerald-300 transition-colors"
