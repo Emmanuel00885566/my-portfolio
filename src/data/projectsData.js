@@ -4,8 +4,8 @@ const projectsData = [
     description:
       "Personal portfolio website built to showcase my projects and skills.",
     tech: ["React", "Tailwind CSS"],
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://olatayo-portifolio.vercel.app/",
+    github: "https://github.com/Emmanuel00885566/my-portfolio.git",
+    live: "https://my-portfolio-pink-six-12.vercel.app/",
   },
   {
     title: "E-Commerce API",
